@@ -4,7 +4,7 @@ import { IoBookmarksOutline } from "react-icons/io5";
 import PropTypes from 'prop-types';
 const Blog = ({blog,handleAddBookMark,handleReadingTime}) => {
 
-    const{title,cover,author_name,author_img,posted_date,
+    const{id,title,cover,author_name,author_img,posted_date,
     reading_time,hashtags}=blog;
 
 
@@ -36,7 +36,7 @@ const Blog = ({blog,handleAddBookMark,handleReadingTime}) => {
                     hashtags.map(has=><span key={has}><a href="#">{has}</a></span>)
                 }
             </div>
-            <button onClick={()=>handleReadingTime(reading_time)} className='underline text-purple-400'>Mark as read</button>
+            <button onClick={()=>handleReadingTime(reading_time,id)} className='underline text-purple-400'>Mark as read</button>
         </div>
     );
 };
